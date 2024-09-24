@@ -42,7 +42,7 @@
         android:textSize="@dimen/_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkValue"
+        app:layout_constraintTop_toBottomOf="@+id/chkValue"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
