@@ -29,6 +29,7 @@ public class editpref extends AppCompatActivity {
         Log.d(TAG, "onCreate: here");
         initButton();
         initCheckBox();
+        getSettings();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -71,5 +72,14 @@ public class editpref extends AppCompatActivity {
                 Log.d(TAG, "onCheckedChanged: " + isChecked);
             }
         });
+    }
+    private void getSettings() {
+        //read the shared preferences
+        SharedPreferences preferences = getApplication().getSharedPreferences("myprefs", MODE_PRIVATE);
+        Boolean isDarkMode = preferences.getBoolean("darkmode", false);
+        Log.d(TAG, "onResume: " + isDarkMode);
+
+        CheckBox chkDarkMode = findViewById(R.id.chkDarkMode);
+        chkDarkMode.setChecked(isDarkMode);
     }
 }
